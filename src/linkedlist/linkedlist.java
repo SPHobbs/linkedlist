@@ -1,39 +1,5 @@
 package linkedlist;
-import java.util.Scanner;
 
-class Node{
-	
-	protected int data;
-	protected Node link;
-	
-	/* Constructor */
-	public Node() {
-		link = null;
-		data=0;
-	}
-	/*Overloaded Constructor*/
-	public Node(int d, Node n) {
-		data = d;
-		link = n;
-	}
-	/*Function to set link to next node*/
-	public void setLink ( Node n ){
-		link = n;
-	}
-	/*Function to set the data to current node*/
-	public void setData ( int d ){
-		data = d;
-	}
-	/*Function to get link to next node*/
-	public Node getLink( ){
-		return link;
-	}
-	/*Function to get the data from the current node*/
-	public int getData( ){
-		return data;
-	}	
-	
-}
 class linkedlist {
 	
 	protected Node start;
@@ -62,10 +28,50 @@ class linkedlist {
 		}
 		
 	}
-	public static void main(String[] args) {
-		// This is my main method, it will be the starting point
-		
-
+	/*Function to insert an element at the end*/
+	public void insertAtEnd( int val){
+		Node nptr = new Node( val, null);
+		size++;
+		if(start == null){
+			start = nptr;
+			end = start;
+		}else{
+			end.setLink(nptr);
+			end = nptr;
+		}
 	}
+	/*Function display elements of linked list*/
+	public void display(){
+		System.out.print("\nSingly linked list = ");
+		if(size==0){
+			System.out.print("\nEmpty linked list \n");
+		}
+		if(start.getLink()==null){
+			System.out.print(start.getData());
+			return;
+		}
+		Node ptr = start;
+		System.out.println(start.getData() + "->");
+		ptr = start.getLink();
+		while(ptr.getLink()!=null){
+			System.out.print(ptr.getData());
+			ptr = ptr.getLink();
+		}
+		System.out.print(ptr.getData() + "->");
+	}
+	/*Function to delete an element at a given point*/
+	public void delete( int val ){
+		Node nptr = new Node(val, null);
+		size++;
+		if(start == null){
+			start = nptr;
+			end = start;
+		}else{
+			nptr.setLink(start);
+			start = nptr;
+		}
+		
+	}
+	
 
 }
