@@ -1,6 +1,7 @@
 package linkedlist;
 
 import java.util.*;
+import javax.swing.*;
 
 /*Class singlyLinkedList*/
 public class singlyLinkedList{
@@ -18,6 +19,15 @@ public class singlyLinkedList{
 	char ch;
 	do{
 		//Various options for interacting with the linked list
+		String str = JOptionPane.showInputDialog("\nSingly Linked List\n"
+				+ "1. Insert at begining\n"
+				+ "2.Insert at end\n"
+				+ "3. Insert at some position\n"
+				+ "4. Delete at some position\n"
+				+ "5. Check empty\n"
+				+ "6. Get size\n"
+				+ "7. Display Linked List");
+		/*
 		System.out.println("\nSingly Linked List Operations\n");
 		System.out.println("1. insert at the begining");
 		System.out.println("2. Insert at the end");
@@ -26,43 +36,45 @@ public class singlyLinkedList{
 		System.out.println("5. Check empty");
 		System.out.println("6. Get size");
 		System.out.println("7. Display Linked list");
-		
 		int choice = scan.nextInt();
+		*/
+		
+		int choice = Integer.parseInt(str);
 		switch( choice ){
 		//switch statement to interact with the linked list
 		case 1 :
-			System.out.println("Enter int element to insert ");
+			JOptionPane.showInputDialog("Enter int element to insert ");
 			list.insertAtStart(scan.nextInt());
 			break;
 		case 2 :
-			System.out.println("Enter int element to insert ");
+			JOptionPane.showInputDialog("Enter int element to insert ");
 			list.insertAtEnd(scan.nextInt());
 			break;
 		case 3 :
-			System.out.println("Enter the element ");
+			JOptionPane.showInputDialog("Enter the element ");
 			break;
 		case 4 :
-			System.out.println("Enter the position to delete ");
+			JOptionPane.showInputDialog("Enter the position to delete ");
 			list.delete(scan.nextInt());
 			break;
 		case 5 :
 			if(list.isEmpty()==true)
 			{
-				System.out.println("The list is empty ");
+				JOptionPane.showMessageDialog(null,"The list is empty ");
 			}else{
-				System.out.println("The list has some elements ");
+				JOptionPane.showMessageDialog(null,"The list has some elements ");
 			}
 			
 			list.insertAtEnd(scan.nextInt());
 			break;
 		case 6 :
-			System.out.println("The size of the array is " + linkedlist.size);
+			JOptionPane.showInputDialog("The size of the array is " + linkedlist.size);
 			break;
 		case 7 :
 			list.display();
 			break;
 		}
-		System.out.println("\nDo you want to continue Y/N \n");
+		JOptionPane.showInputDialog("\nDo you want to continue Y/N \n");
 		ch = scan.next().charAt(0);		
 	}while(true);
 	}
