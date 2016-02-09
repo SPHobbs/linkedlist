@@ -8,7 +8,8 @@ public class singlyLinkedList{
 	
 	
 	public static void main(String[] args) {
-		// This is my main method, it will be the starting point
+	//This scanner gets the input from the user in order to 
+	//to determine what action to take
 	Scanner scan = new Scanner(System.in);
 	linkedlist list = new linkedlist();
 	
@@ -16,6 +17,7 @@ public class singlyLinkedList{
 	
 	char ch;
 	do{
+		//Various options for interacting with the linked list
 		System.out.println("\nSingly Linked List Operations\n");
 		System.out.println("1. insert at the begining");
 		System.out.println("2. Insert at the end");
@@ -27,6 +29,7 @@ public class singlyLinkedList{
 		
 		int choice = scan.nextInt();
 		switch( choice ){
+		//switch statement to interact with the linked list
 		case 1 :
 			System.out.println("Enter int element to insert ");
 			list.insertAtStart(scan.nextInt());
@@ -53,7 +56,7 @@ public class singlyLinkedList{
 			list.insertAtEnd(scan.nextInt());
 			break;
 		case 6 :
-			System;
+			System.out.println("The size of the array is " + linkedlist.size);
 			break;
 		case 7 :
 			list.display();
@@ -61,7 +64,6 @@ public class singlyLinkedList{
 		}
 		System.out.println("\nDo you want to continue Y/N \n");
 		ch = scan.next().charAt(0);		
-	}while()
-
+	}while(true);
 	}
 }

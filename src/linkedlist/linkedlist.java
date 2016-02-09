@@ -4,7 +4,7 @@ class linkedlist {
 	
 	protected Node start;
 	protected Node end;
-	public int size;
+	public static int size;
 	
 	/*Default Constructor*/
 	public linkedlist(){
